@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace GestorDeEstudantesT7
 {
-    public partial class Login_Form : Form
+    public partial class FormLogin : Form
     {
-        public Login_Form()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -42,7 +42,7 @@ namespace GestorDeEstudantesT7
 
             if (tabelaDeDados.Rows.Count > 0)
             {
-                MessageBox.Show("Usuário encontrado.");
+                this.DialogResult = DialogResult.OK;
             }
             else 
             {
