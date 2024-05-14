@@ -86,6 +86,7 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(139, 20);
             this.textBoxUsuario.TabIndex = 4;
+            this.textBoxUsuario.Text = "admin";
             // 
             // textBoxSenha
             // 
@@ -94,6 +95,7 @@
             this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(139, 20);
             this.textBoxSenha.TabIndex = 5;
+            this.textBoxSenha.Text = "admin";
             // 
             // buttonOK
             // 
