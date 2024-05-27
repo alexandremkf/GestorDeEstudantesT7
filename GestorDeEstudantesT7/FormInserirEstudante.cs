@@ -74,15 +74,13 @@ namespace GestorDeEstudantesT7
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-            Verificar();
-
             Estudante estudante = new Estudante();
             
             string nome = textBoxNome.Text;
-            string Sobrenome = textBoxSobrenome.Text;
+            string sobrenome = textBoxSobrenome.Text;
             DateTime nascimento = dateTimePickerNascimento.Value;
-            string Telefone = textBoxTelefone.Text;
-            string Endereco = textBoxEndereco.Text;
+            string telefone = textBoxTelefone.Text;
+            string endereco = textBoxEndereco.Text;
             string genero = "Feminino";
 
             if (radioButtonMasculino.Checked == true) 
@@ -102,6 +100,26 @@ namespace GestorDeEstudantesT7
                     "Ano de nascimento inválido",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+            else if (Verificar())
+            {
+                pictureBoxFoto.Image.Save(foto, pictureBoxFoto.Image.RawFormat);
+
+                if (estudante.inserirEstudante(nome, sobrenome, nascimento, telefone, endereco, genero, foto))
+                {
+                    MessageBox.Show("Novo aluno cadastrado!", "Sucesso!", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Aluno não cadastrado!", "Erro!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Existem campos não preenchidos!", "Campos não preenchidos!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
