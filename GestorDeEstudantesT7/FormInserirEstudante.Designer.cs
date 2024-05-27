@@ -108,9 +108,10 @@
             // dateTimePickerNascimento
             // 
             this.dateTimePickerNascimento.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNascimento.Location = new System.Drawing.Point(124, 83);
             this.dateTimePickerNascimento.Name = "dateTimePickerNascimento";
-            this.dateTimePickerNascimento.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerNascimento.Size = new System.Drawing.Size(79, 20);
             this.dateTimePickerNascimento.TabIndex = 8;
             // 
             // label5

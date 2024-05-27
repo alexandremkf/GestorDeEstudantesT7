@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,18 @@ namespace GestorDeEstudantesT7
                 meuBancoDeDados.fecharConexao();
                 return false;
             }
+        }
+
+        // RETORNA a tabela dos estudantes que estão no banco de dados
+        public DataTable getEstudantes(MySqlCommand comando)
+        {
+            comando.Connection = meuBancoDeDados.getConexao;
+
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando); 
+            DataTable tabelaDeDados = new DataTable();
+            adaptador.Fill(tabelaDeDados);
+
+            return tabelaDeDados;
         }
     }
 }
