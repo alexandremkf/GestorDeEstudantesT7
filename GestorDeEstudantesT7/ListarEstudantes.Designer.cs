@@ -35,28 +35,30 @@
             // 
             // dataGridViewListaDeAlunos
             // 
+            this.dataGridViewListaDeAlunos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewListaDeAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListaDeAlunos.Location = new System.Drawing.Point(32, 12);
+            this.dataGridViewListaDeAlunos.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewListaDeAlunos.Name = "dataGridViewListaDeAlunos";
-            this.dataGridViewListaDeAlunos.Size = new System.Drawing.Size(451, 368);
+            this.dataGridViewListaDeAlunos.Size = new System.Drawing.Size(594, 368);
             this.dataGridViewListaDeAlunos.TabIndex = 0;
             // 
             // buttonAtualizar
             // 
             this.buttonAtualizar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAtualizar.Location = new System.Drawing.Point(32, 386);
+            this.buttonAtualizar.Location = new System.Drawing.Point(12, 386);
             this.buttonAtualizar.Name = "buttonAtualizar";
-            this.buttonAtualizar.Size = new System.Drawing.Size(451, 46);
+            this.buttonAtualizar.Size = new System.Drawing.Size(594, 46);
             this.buttonAtualizar.TabIndex = 25;
             this.buttonAtualizar.Text = "Atualizar";
             this.buttonAtualizar.UseVisualStyleBackColor = false;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // ListarEstudantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 444);
+            this.ClientSize = new System.Drawing.Size(618, 444);
             this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.dataGridViewListaDeAlunos);
             this.Name = "ListarEstudantes";
