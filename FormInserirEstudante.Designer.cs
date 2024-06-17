@@ -329,12 +329,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButtonFeminino;
-        private System.Windows.Forms.RadioButton radioButtonMasculino;
-        private System.Windows.Forms.TextBox textBoxTelefone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxEndereco;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -342,6 +338,10 @@
         private System.Windows.Forms.Button buttonEnviarFoto;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonCadastrar;
-        private System.Windows.Forms.PictureBox pictureBoxFoto;
+        internal System.Windows.Forms.RadioButton radioButtonFeminino;
+        internal System.Windows.Forms.RadioButton radioButtonMasculino;
+        internal System.Windows.Forms.TextBox textBoxTelefone;
+        internal System.Windows.Forms.TextBox textBoxEndereco;
+        internal System.Windows.Forms.PictureBox pictureBoxFoto;
     }
 }
