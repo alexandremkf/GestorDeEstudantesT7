@@ -271,6 +271,7 @@
             this.buttonApagar.TabIndex = 46;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = false;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // FormAualizarApagarEstudante
             // 
