@@ -22,21 +22,38 @@ namespace GestorDeEstudantesT7
 
         }
 
-        private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void listaDeEstudantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListarEstudantes formListarEstudante = new FormListarEstudantes();
+            formListarEstudante.Show(this);
+        }
+
+        private void novoEstudanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormInserirEstudante formInserirEstudante = new FormInserirEstudante();
             formInserirEstudante.Show(this);
         }
 
-        private void FormPrincipal_Load(object sender, EventArgs e)
+        private void estatísticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEstatisticas formEstatisticas = new FormEstatisticas();
+            formEstatisticas.Show(this);
+        }
+
+        private void editarRemoverToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAtualizarApagarEstudante atualizarApagarEstudante = new FormAtualizarApagarEstudante();
+            atualizarApagarEstudante.Show(this);
+        }
+
+        private void gerenciarAlunosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void listarAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListarEstudantes formListarEstudante = new ListarEstudantes();
-            formListarEstudante.Show(this);
+
         }
     }
 }

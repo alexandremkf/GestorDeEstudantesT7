@@ -24,7 +24,7 @@ namespace GestorDeEstudantesT7
             {
                 Application.Run(new FormPrincipal());
             }
-            else 
+            else
             {
                 Application.Exit();
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mysqlx;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,26 +19,6 @@ namespace GestorDeEstudantesT7
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -45,12 +26,12 @@ namespace GestorDeEstudantesT7
 
         private void buttonEnviarFoto_Click(object sender, EventArgs e)
         {
-            // Pesquisa a imagem no computador
+            // Abre janela para pesquisar a imagem no computador.
             OpenFileDialog procurarFoto = new OpenFileDialog();
 
             procurarFoto.Filter = "Selecione a foto (*.jpg;*.png;*.jpeg;*.gif)|*.jpg;*.png;*.jpeg;*.gif";
 
-            if (procurarFoto.ShowDialog() == DialogResult.OK)
+            if(procurarFoto.ShowDialog() == DialogResult.OK)
             {
                 pictureBoxFoto.Image = Image.FromFile(procurarFoto.FileName);
             }
@@ -58,11 +39,11 @@ namespace GestorDeEstudantesT7
 
         bool Verificar()
         {
-            if ((textBoxNome.Text.Trim() == "") ||
-                (textBoxSobrenome.Text.Trim() == "") ||
-                (textBoxTelefone.Text.Trim() == "") ||
-                (textBoxEndereco.Text.Trim() == "") ||
-                (pictureBoxFoto.Image == null))
+            if((textBoxNome.Text.Trim() == "") || 
+               (textBoxSobrenome.Text.Trim() == "") ||
+               (textBoxTelefone.Text.Trim() == "") ||
+               (textBoxEndereco.Text.Trim() == "") ||
+               (pictureBoxFoto.Image == null))
             {
                 return false;
             }
@@ -75,7 +56,7 @@ namespace GestorDeEstudantesT7
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
             Estudante estudante = new Estudante();
-            
+
             string nome = textBoxNome.Text;
             string sobrenome = textBoxSobrenome.Text;
             DateTime nascimento = dateTimePickerNascimento.Value;
@@ -83,20 +64,20 @@ namespace GestorDeEstudantesT7
             string endereco = textBoxEndereco.Text;
             string genero = "Feminino";
 
-            if (radioButtonMasculino.Checked == true) 
+            if (radioButtonMasculino.Checked == true)
             {
                 genero = "Masculino";
             }
-            
+
             MemoryStream foto = new MemoryStream();
 
-            // Verificar se o estudante tem entre 10 a 100 anos.
+            // Verificar se o aluno tem entre 10 e 100 anos.
             int anoDeNascimento = dateTimePickerNascimento.Value.Year;
             int anoAtual = DateTime.Now.Year;
 
             if ((anoAtual - anoDeNascimento) < 10 || (anoAtual - anoDeNascimento) > 100)
             {
-                MessageBox.Show("O aluno precisa ter entre 10 e 100 anos.", 
+                MessageBox.Show("O aluno precisa ter entre 10 e 100 anos.",
                     "Ano de nascimento inválido",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -105,21 +86,23 @@ namespace GestorDeEstudantesT7
             {
                 pictureBoxFoto.Image.Save(foto, pictureBoxFoto.Image.RawFormat);
 
-                if (estudante.inserirEstudante(nome, sobrenome, nascimento, telefone, endereco, genero, foto))
+                if (estudante.inserirEstudante(nome, sobrenome, nascimento, telefone, 
+                    genero, endereco, foto))
                 {
                     MessageBox.Show("Novo aluno cadastrado!", "Sucesso!", 
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não cadastrado!", "Erro!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Aluno não cadastrado!", "Erro!", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                 }
             }
             else
             {
-                MessageBox.Show("Existem campos não preenchidos!", "Campos não preenchidos!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Existem campos não preenchidos!", "Campos não preenchidos",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
