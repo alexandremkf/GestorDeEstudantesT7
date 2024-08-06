@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panelMeninos = new System.Windows.Forms.Panel();
+            this.labelMeninos = new System.Windows.Forms.Label();
             this.panelMeninas = new System.Windows.Forms.Panel();
+            this.labelMeninas = new System.Windows.Forms.Label();
             this.panelTotalDeEstudantes = new System.Windows.Forms.Panel();
             this.labelTotalDeEstudantes = new System.Windows.Forms.Label();
-            this.labelMeninos = new System.Windows.Forms.Label();
-            this.labelMeninas = new System.Windows.Forms.Label();
             this.panelMeninos.SuspendLayout();
             this.panelMeninas.SuspendLayout();
             this.panelTotalDeEstudantes.SuspendLayout();
@@ -41,25 +41,49 @@
             // 
             // panelMeninos
             // 
-            this.panelMeninos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panelMeninos.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panelMeninos.Controls.Add(this.labelMeninos);
             this.panelMeninos.Location = new System.Drawing.Point(17, 232);
             this.panelMeninos.Name = "panelMeninos";
             this.panelMeninos.Size = new System.Drawing.Size(330, 206);
             this.panelMeninos.TabIndex = 0;
             // 
+            // labelMeninos
+            // 
+            this.labelMeninos.AutoSize = true;
+            this.labelMeninos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeninos.Location = new System.Drawing.Point(103, 85);
+            this.labelMeninos.Name = "labelMeninos";
+            this.labelMeninos.Size = new System.Drawing.Size(128, 24);
+            this.labelMeninos.TabIndex = 1;
+            this.labelMeninos.Text = "Meninos: 50%";
+            this.labelMeninos.MouseEnter += new System.EventHandler(this.labelMeninos_MouseEnter);
+            this.labelMeninos.MouseLeave += new System.EventHandler(this.labelMeninos_MouseLeave);
+            // 
             // panelMeninas
             // 
-            this.panelMeninas.BackColor = System.Drawing.Color.RosyBrown;
+            this.panelMeninas.BackColor = System.Drawing.Color.Firebrick;
             this.panelMeninas.Controls.Add(this.labelMeninas);
             this.panelMeninas.Location = new System.Drawing.Point(397, 232);
             this.panelMeninas.Name = "panelMeninas";
             this.panelMeninas.Size = new System.Drawing.Size(341, 206);
             this.panelMeninas.TabIndex = 1;
             // 
+            // labelMeninas
+            // 
+            this.labelMeninas.AutoSize = true;
+            this.labelMeninas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeninas.Location = new System.Drawing.Point(115, 85);
+            this.labelMeninas.Name = "labelMeninas";
+            this.labelMeninas.Size = new System.Drawing.Size(127, 24);
+            this.labelMeninas.TabIndex = 2;
+            this.labelMeninas.Text = "Meninas: 50%";
+            this.labelMeninas.MouseEnter += new System.EventHandler(this.labelMeninas_MouseEnter);
+            this.labelMeninas.MouseLeave += new System.EventHandler(this.labelMeninas_MouseLeave);
+            // 
             // panelTotalDeEstudantes
             // 
-            this.panelTotalDeEstudantes.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panelTotalDeEstudantes.BackColor = System.Drawing.Color.Gray;
             this.panelTotalDeEstudantes.Controls.Add(this.labelTotalDeEstudantes);
             this.panelTotalDeEstudantes.Location = new System.Drawing.Point(17, 12);
             this.panelTotalDeEstudantes.Name = "panelTotalDeEstudantes";
@@ -77,30 +101,6 @@
             this.labelTotalDeEstudantes.Text = "Total de Estudantes: 999";
             this.labelTotalDeEstudantes.MouseEnter += new System.EventHandler(this.labelTotalDeEstudantes_MouseEnter);
             this.labelTotalDeEstudantes.MouseLeave += new System.EventHandler(this.labelTotalDeEstudantes_MouseLeave);
-            // 
-            // labelMeninos
-            // 
-            this.labelMeninos.AutoSize = true;
-            this.labelMeninos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMeninos.Location = new System.Drawing.Point(103, 85);
-            this.labelMeninos.Name = "labelMeninos";
-            this.labelMeninos.Size = new System.Drawing.Size(128, 24);
-            this.labelMeninos.TabIndex = 1;
-            this.labelMeninos.Text = "Meninos: 50%";
-            this.labelMeninos.MouseEnter += new System.EventHandler(this.labelMeninos_MouseEnter);
-            this.labelMeninos.MouseLeave += new System.EventHandler(this.labelMeninos_MouseLeave);
-            // 
-            // labelMeninas
-            // 
-            this.labelMeninas.AutoSize = true;
-            this.labelMeninas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMeninas.Location = new System.Drawing.Point(115, 85);
-            this.labelMeninas.Name = "labelMeninas";
-            this.labelMeninas.Size = new System.Drawing.Size(127, 24);
-            this.labelMeninas.TabIndex = 2;
-            this.labelMeninas.Text = "Meninas: 50%";
-            this.labelMeninas.MouseEnter += new System.EventHandler(this.labelMeninas_MouseEnter);
-            this.labelMeninas.MouseLeave += new System.EventHandler(this.labelMeninas_MouseLeave);
             // 
             // FormEstatisticas
             // 
