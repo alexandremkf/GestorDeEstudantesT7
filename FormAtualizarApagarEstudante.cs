@@ -212,5 +212,10 @@ namespace GestorDeEstudantesT7
                 e.Handled = true;
             }
         }
+
+        private void FormAtualizarApagarEstudante_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -111,7 +111,8 @@
             this.Controls.Add(this.panelMeninas);
             this.Controls.Add(this.panelMeninos);
             this.Name = "FormEstatisticas";
-            this.Text = "FormEstatisticas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "SGA - Estatísticas";
             this.Load += new System.EventHandler(this.FormEstatisticas_Load);
             this.panelMeninos.ResumeLayout(false);
             this.panelMeninos.PerformLayout();

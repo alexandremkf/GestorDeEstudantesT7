@@ -296,6 +296,7 @@
             this.Name = "FormAtualizarApagarEstudante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SGA - Atualizar e Deletar";
+            this.Load += new System.EventHandler(this.FormAtualizarApagarEstudante_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
