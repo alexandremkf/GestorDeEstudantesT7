@@ -41,6 +41,7 @@
             this.dataGridViewListaDeAlunos.Name = "dataGridViewListaDeAlunos";
             this.dataGridViewListaDeAlunos.Size = new System.Drawing.Size(776, 359);
             this.dataGridViewListaDeAlunos.TabIndex = 0;
+            this.dataGridViewListaDeAlunos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaDeAlunos_CellContentClick);
             this.dataGridViewListaDeAlunos.DoubleClick += new System.EventHandler(this.dataGridViewListaDeAlunos_DoubleClick);
             // 
             // buttonAtualizar
