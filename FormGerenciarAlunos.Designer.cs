@@ -74,6 +74,7 @@
             this.buttonEnviarFoto.TabIndex = 49;
             this.buttonEnviarFoto.Text = "Enviar Foto";
             this.buttonEnviarFoto.UseVisualStyleBackColor = true;
+            this.buttonEnviarFoto.Click += new System.EventHandler(this.buttonEnviarFoto_Click);
             // 
             // labelID
             // 
@@ -261,6 +262,7 @@
             this.buttonBaixarFoto.TabIndex = 50;
             this.buttonBaixarFoto.Text = "Baixar Foto";
             this.buttonBaixarFoto.UseVisualStyleBackColor = true;
+            this.buttonBaixarFoto.Click += new System.EventHandler(this.buttonBaixarFoto_Click);
             // 
             // buttonAtualizar
             // 
@@ -291,7 +293,6 @@
             this.labelBuscarDado.Size = new System.Drawing.Size(186, 17);
             this.labelBuscarDado.TabIndex = 55;
             this.labelBuscarDado.Text = "Insira dado para buscar:";
-            this.labelBuscarDado.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxBuscarDado
             // 
@@ -309,7 +310,7 @@
             this.buttonBuscarDado.TabIndex = 53;
             this.buttonBuscarDado.Text = "Buscar";
             this.buttonBuscarDado.UseVisualStyleBackColor = true;
-            this.buttonBuscarDado.Click += new System.EventHandler(this.button1_Click);
+            this.buttonBuscarDado.Click += new System.EventHandler(this.buttonBuscarDado_Click);
             // 
             // buttonRemover
             // 
