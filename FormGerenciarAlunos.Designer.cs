@@ -273,6 +273,7 @@
             this.buttonAtualizar.TabIndex = 52;
             this.buttonAtualizar.Text = "Atualizar";
             this.buttonAtualizar.UseVisualStyleBackColor = true;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // dataGridViewListaDeAlunos
             // 
@@ -321,6 +322,7 @@
             this.buttonRemover.TabIndex = 57;
             this.buttonRemover.Text = "Remover";
             this.buttonRemover.UseVisualStyleBackColor = true;
+            this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
             // 
             // buttonRedefinir
             // 
@@ -342,6 +344,7 @@
             this.buttonIncluir.TabIndex = 59;
             this.buttonIncluir.Text = "Incluir";
             this.buttonIncluir.UseVisualStyleBackColor = true;
+            this.buttonIncluir.Click += new System.EventHandler(this.buttonIncluir_Click);
             // 
             // buttonSalvar
             // 
@@ -352,6 +355,7 @@
             this.buttonSalvar.TabIndex = 58;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // labelTotalDeAlunos
             // 
