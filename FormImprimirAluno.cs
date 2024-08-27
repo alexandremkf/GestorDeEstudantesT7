@@ -60,5 +60,62 @@ namespace GestorDeEstudantesT7
             dateTimePickerDataInicial.Enabled = true;
             dateTimePickerDataFinal.Enabled = true;
         }
+
+        // Criação das variáveis para o botão filtrar.
+        string dataInicial;
+        string dataFinal;
+
+        private void buttonFiltrar_Click(object sender, EventArgs e)
+        {
+            // Filtrar os dados que serão exibidos na tela.
+            MySqlCommand comando;
+            string busca;
+
+            // Verificar se o usuário quer usar um intervalo de datas.
+            if (radioButtonSim.Checked)
+            {
+                // Pega as datas que o usuário selecionou.
+                dataInicial = dateTimePickerDataInicial.Value.ToString("yyyy-MM-dd");
+                // Formato dia/mês/ano.
+                dataFinal = dateTimePickerDataFinal.Value.ToString("yyyy-MM-dd");
+
+                if (radioButtonMasculino.Checked)
+                {
+                    busca = "SELECT * FROM `estudantes` WHERE `nascimento` BETWEEN'"
+                        + dataInicial + "' AND '"+ dataFinal +"' AND genero = 'Masculino'";
+                }
+                else if (radioButtonFeminino.Checked)
+                {
+                    busca = "SELECT * FROM `estudantes` WHERE `nascimento` BETWEEN'"
+                        + dataInicial + "' AND '" + dataFinal + "' AND genero = 'Feminino'";
+                }
+                else
+                {
+                    busca = "SELECT * FROM `estudantes` WHERE `nascimento` BETWEEN'"
+                        + dataInicial + "' AND '" + dataFinal + "'";
+                }
+
+                comando = new MySqlCommand(busca);
+                preencheTabela(comando);
+            }
+            else
+            {
+                if (radioButtonMasculino.Checked)
+                {
+                    busca = "SELECT * FROM `estudantes` WHERE `genero` = 'Masculino'";
+                }
+                else if (radioButtonFeminino.Checked)
+                {
+                    busca = "SELECT * FROM `estudantes` WHERE `genero` = 'Feminino'";
+                }
+                else
+                {
+                    busca = "SELECT * FROM `estudantes`";
+                }
+
+                comando = new MySqlCommand(busca);
+                preencheTabela(comando);
+            }
+        }
     }
 }
