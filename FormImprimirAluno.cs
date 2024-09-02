@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -115,6 +116,58 @@ namespace GestorDeEstudantesT7
 
                 comando = new MySqlCommand(busca);
                 preencheTabela(comando);
+            }
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            // Salva o arquivo em um arquivo de texto
+            string caminho = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"/lista_de_estudante.txt";
+
+
+            using (var escritor = new StreamWriter(caminho))
+            {
+                // Verifica se ja existe
+                if (!File.Exists(caminho))
+                {
+                    File.Create(caminho);
+                }
+
+                DateTime dataDeNascimento;
+
+                for (int i = 0; i < dataGridViewListaDeAlunos.Rows.Count; i++)
+                {
+                    // Percorre as colunas
+                    for (int j = 0; j < dataGridViewListaDeAlunos.Columns.Count - 1; j++)
+                    {
+                        if (j == 3)
+                        {
+                            dataDeNascimento = Convert.ToDateTime(dataGridViewListaDeAlunos.Rows[i].Cells[j].Value.ToString());
+                            // Escreve as informações de cada coluna (célula) de uma mesma linha.
+                            escritor.Write("\t" +
+                                dataDeNascimento.ToString("dd-MM-yyyy")
+                                + "\t" + "|");
+                        }
+                        else if (j == dataGridViewListaDeAlunos.Columns.Count - 2)
+                        {
+                            escritor.Write("\t" +
+                                dataGridViewListaDeAlunos.Rows[i].Cells[j].Value.ToString());
+                        }
+                        else
+                        {
+                            // Escreve as informações de cada coluna (célula) de uma mesma linha.
+                            escritor.Write("\t" +
+                                dataGridViewListaDeAlunos.Rows[i].Cells[j].Value.ToString()
+                                + "\t" + "|");
+                        }
+                    }
+                    escritor.WriteLine();
+                    escritor.WriteLine("-----------------------------------------------------------------------------------------------" +
+                        "-------------------------------------------------------------");
+                }
+
+                escritor.Close();
+                MessageBox.Show("Dados salvos");
             }
         }
     }

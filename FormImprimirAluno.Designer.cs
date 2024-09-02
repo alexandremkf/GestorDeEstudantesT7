@@ -66,6 +66,7 @@
             this.buttonSalvar.TabIndex = 2;
             this.buttonSalvar.Text = "Salvar em arquivo de texto";
             this.buttonSalvar.UseVisualStyleBackColor = false;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // groupBox1
             // 
